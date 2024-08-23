@@ -1,0 +1,52 @@
+#QUESTÃO 1
+def criar_matriz(linhas, colunas, valor):
+  matriz = []
+  for i in range(linhas):
+    linha = []
+    for j in range(colunas):
+      linha.append(valor)
+    matriz.append(linha)
+  return matriz
+#QUESTÃO 2
+def e_matriz_identidade(matriz):
+  n = len(matriz)
+  for i in range(n):
+    for j in range(n):
+      if i == j and matriz[i][j] != 1:
+        return False
+      elif i != j and matriz[i][j] != 0:
+        return False
+  return True
+#QUESTÃO 3
+def extrair_diagonal(matriz):
+  n = len(matriz)
+  diagonal = []
+  for i in range(n):
+    diagonal.append(matriz[i][i])
+  return diagonal
+#QUESTÃO 4
+def calcular_traco(matriz):
+  n = len(matriz)
+  traco = 0
+  for i in range(n):
+    traco += matriz[i][i]
+  return traco
+#QUESTÃO 5
+def e_matriz_nula(matriz):
+  for linha in matriz:
+    for elemento in linha:
+      if elemento != 0:
+        return False
+  return True
+#QUESTÃO 6
+def multiplicar_escalar(matriz, escalar):
+  n_linhas = len(matriz)
+  n_colunas = len(matriz[0])
+  matriz_multiplicada = []
+  for i in range(n_linhas):
+    linha = []
+    for j in range(n_colunas):
+      linha.append(matriz[i][j] * escalar)
+    matriz_multiplicada.append(linha)
+  return matriz_multiplicada
+#QUESTÃO 7
